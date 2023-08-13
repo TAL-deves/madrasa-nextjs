@@ -1,16 +1,53 @@
+"use client"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link'
+import { useState } from 'react';
  
 function Navbar(props) {
 // console.log(props)
+const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+const toggleDrawer = () => {
+  setIsDrawerOpen(!isDrawerOpen);
+  console.log(isDrawerOpen)
+};
 
   return (
     <nav className={` shadow-black sticky top-0 z-10 bg-[#032216]`}>
       <div className="container mx-auto ">
       {/* <FontAwesomeIcon icon={faHome} height="2rem"/> */}
+      
         <div className=''>
+
+
+
+        <div className="md:hidden">
+          <button
+             onClick={toggleDrawer}
+            className="text-white p-2 focus:outline-none"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+
+
+        <div className="hidden md:block">
         <ul className="flex justify-start ">
          
           {props.navMenu.map((menu) => (
@@ -27,6 +64,7 @@ function Navbar(props) {
         ))}
           
         </ul>
+        </div>
         </div>
         
       </div>
