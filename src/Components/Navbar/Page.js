@@ -45,8 +45,28 @@ const toggleDrawer = () => {
           </button>
         </div>
 
-
-
+        {/* navbar for mobile  */}
+       {isDrawerOpen?
+       <div className="block md:hidden">
+       <ul className="justify-start ">
+        
+         {props.navMenu.map((menu) => (
+           <>
+           {menu.name==="প্রচ্ছদ"?
+           <div className='flex items-center space-x-4 p-1  hover:bg-[#E07B27]' >
+             <div style={{paddingRight: "0rem",}}>
+           <FontAwesomeIcon icon={faHome} style={{color: "#ffffff",}} height="1.1rem"/>
+           </div>
+           <li className="text-white "><Link href="/">প্রচ্ছদ</Link> </li>           
+           </div>:
+         <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><Link href={menu.link}>{menu.name}</Link> </li>}
+         </>
+       ))}
+         
+       </ul>
+       </div>:<></>}
+        
+   {/* for large device  */}
         <div className="hidden md:block">
         <ul className="flex justify-start ">
          
