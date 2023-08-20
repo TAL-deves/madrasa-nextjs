@@ -16,6 +16,7 @@
   }
 }
 
+*/
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +25,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-} */
+    /* Add these styles to your CSS */
+    
+.slick-prev {
+  z-index: 1;
+  left: -5px; /* Adjust the positioning as needed */
+
+  
+}
+
+.slick-prev:before, .slick-next:before{
+  color: gray;
+  height: 40px;
+  width: 40px;
+}
+
+.slick-next {
+  z-index: 1;
+  right: -5px;
+ 
+}
+
+.slick-dots {
+  bottom: 0px; 
+}
+} 
+
+
+
