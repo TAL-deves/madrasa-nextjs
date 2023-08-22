@@ -18,6 +18,7 @@ export default function ImgSlider2({images}) {
       </div>
       <div>
       <Slider 
+      className='m-4'
       asNavFor={nav2} 
       ref={(slider1) => setNav1(slider1)}
       arrows={false}>

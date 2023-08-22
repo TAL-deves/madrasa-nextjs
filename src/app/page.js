@@ -2,8 +2,10 @@
 // import './globals.css'; 
 
 import Banner from "@/Components/Banner/Banner";
+import Declarations from "@/Components/Declarations/Declarations";
 import FbPage from "@/Components/FbPage/fbPage";
 import ImgSlider2 from "@/Components/ImgSlider2/ImgSlider2";
+import News from "@/Components/News/News";
 import VideoSlider from "@/Components/VideoSlider/VideoSlider";
 
 export default function Home() {
@@ -29,12 +31,15 @@ export default function Home() {
       
     <main>
       <Banner/>
-      <div class="grid grid-cols-3 gap-4">
-        <div className="col-span-2">
-      <ImgSlider2 images={images}/>
-      </div>
-      <FbPage/>
-      </div>
+      {/* <News/> */}
+      <Declarations/>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div className="md:col-span-2">
+    <ImgSlider2 images={images}/>
+  </div>
+  <FbPage/>
+</div>
+
       <VideoSlider videos={videos}/>
     </main>
     </div>

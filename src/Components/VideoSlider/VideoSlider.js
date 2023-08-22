@@ -26,7 +26,8 @@ export default function VideoSlider({videos}) {
             <img src="https://darululoomhathazari.com/media/img/icon-image.png" alt="" />
         </div>
       <div>
-      <Slider className='m-10'
+        <div className='hidden md:block'>
+      <Slider className='m-10 block '
         ref={(slider2) => setNav2(slider2)}
         slidesToShow={3}
         swipeToSlide={true}
@@ -41,6 +42,24 @@ export default function VideoSlider({videos}) {
         ))}
 
       </Slider>
+      </div>
+      <div className='block md:hidden'>
+      <Slider className='m-10 hidden'
+        ref={(slider2) => setNav2(slider2)}
+        slidesToShow={1}
+        swipeToSlide={true}
+        arrows={true}
+        dots={true}
+      >
+        {/* <Slider {...sliderSettings}> */}
+        {videos.map(vid => (
+          <div className='p-4'>
+          <iframe height="250" width="100%" src={vid} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div> 
+        ))}
+
+      </Slider>
+      </div>
       </div>
     </div>
   );

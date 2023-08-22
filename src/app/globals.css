@@ -49,6 +49,11 @@ body {
 .slick-dots {
   bottom: 0px; 
 }
+
+/* .grid {
+  display: grid;
+  justify-items: center;
+} */
 } 
 
 
