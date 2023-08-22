@@ -10,5 +10,6 @@ function Declarations() {
     </div>
   )
 }
+ 
 
 export default Declarations
