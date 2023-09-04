@@ -3,7 +3,7 @@
 
 import Banner from "@/Components/Banner/Banner";
 import Declarations from "@/Components/Declarations/Declarations";
-import FbPage from "@/Components/FbPage/fbPage";
+import FbPage from "@/Components/FbPage/FbPage";
 import ImgSlider2 from "@/Components/ImgSlider2/ImgSlider2";
 import News from "@/Components/News/News";
 import VideoSlider from "@/Components/VideoSlider/VideoSlider";
