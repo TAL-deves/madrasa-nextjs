@@ -50,10 +50,24 @@ body {
   bottom: 0px; 
 }
 
-/* .grid {
-  display: grid;
-  justify-items: center;
-} */
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.open .menu-item {
+  display: block;
+}
+
+.closed .menu-item {
+  display: none;
+}
+
 } 
 
 

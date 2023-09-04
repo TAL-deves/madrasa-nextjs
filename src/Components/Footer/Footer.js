@@ -6,7 +6,7 @@ import { faFacebook, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-i
 function Footer() {
     return (
         <div>
-            <footer className="bg-gray-800 text-white p-4">
+            <footer className="bg-gray-800 text-white py-4 bottom-0">
                 <div className="container text-center">
                     <div className='flex justify-evenly'>
                         <p>Affiliates</p>

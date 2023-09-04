@@ -4,14 +4,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link'
 import { useState } from 'react';
+import { logoutHandler } from '@/apiHandler/customApiHandler';
+import { useRouter } from 'next/navigation';
  
 function Navbar(props) {
-// console.log(props)
+  const router = useRouter();
 const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 const toggleDrawer = () => {
   setIsDrawerOpen(!isDrawerOpen);
   console.log(isDrawerOpen)
+};
+
+const handleLogOut = async () => {
+  // setError('');
+  //  setIsLoading(true);
+  
+  try {
+    const data = await logoutHandler('/auth/logout');
+
+    // Handle the response data
+    if (data.success === true) {
+      router.push('/');
+      window.location.reload()
+      // router.replace("/");
+      console.log("logged in", data)
+    }
+    // setShow(false);
+    console.log("login response", data);
+  } catch (error) {
+    // Handle the error
+    // setShow(false);
+    console.log(error);
+  }
+
+  // setIsLoading(false);
 };
 
   return (
@@ -59,7 +86,16 @@ const toggleDrawer = () => {
            </div>
            <li className="text-white "><Link href="/">প্রচ্ছদ</Link> </li>           
            </div>:
-         <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><Link href={menu.link}>{menu.name}</Link> </li>}
+           <div>
+         {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
+         <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><div onClick={()=>{handleLogOut}}>লগআউট</div> </li>
+         :
+         <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><Link href={menu.link}>{menu.name}</Link> </li>
+        //  <></>
+         }
+           </div>
+         
+         }
          </>
        ))}
          
@@ -68,7 +104,7 @@ const toggleDrawer = () => {
         
    {/* for large device  */}
         <div className="hidden md:block">
-        <ul className="flex justify-start ">
+        <ul className="flex justify-start items-center">
          
           {props.navMenu.map((menu) => (
             <>
@@ -79,7 +115,15 @@ const toggleDrawer = () => {
             </div>
             <li className="text-white "><Link href="/">প্রচ্ছদ</Link> </li>           
             </div>:
-          <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-4"><Link href={menu.link}>{menu.name}</Link> </li>}
+          <>
+          {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
+          <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-4 cursor-pointer"><div onClick={()=>{handleLogOut()}}>লগআউট</div> </li>
+          :
+          <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-4"><Link href={menu.link}>{menu.name}</Link> </li>
+         //  <></>
+          }
+            </>
+          }
           </>
         ))}
           
