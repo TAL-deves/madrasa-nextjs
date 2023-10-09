@@ -87,12 +87,12 @@ const handleLogOut = async () => {
            <li className="text-white "><Link href="/">প্রচ্ছদ</Link> </li>           
            </div>:
            <div>
-         {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
+         {/* {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
          <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><div onClick={()=>{handleLogOut}}>লগআউট</div> </li>
-         :
+         : */}
          <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-2"><Link href={menu.link}>{menu.name}</Link> </li>
-        //  <></>
-         }
+        
+         {/* } */}
            </div>
          
          }
@@ -116,12 +116,12 @@ const handleLogOut = async () => {
             <li className="text-white "><Link href="/">প্রচ্ছদ</Link> </li>           
             </div>:
           <>
-          {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
+          {/* {localStorage.getItem('accessToken') && menu.name==="লগ ইন"?
           <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-4 cursor-pointer"><div onClick={()=>{handleLogOut()}}>লগআউট</div> </li>
-          :
+          : */}
           <li className="text-white px-10 hover:bg-[#E07B27] transition-bg duration-800 space-x-4 p-4"><Link href={menu.link}>{menu.name}</Link> </li>
-         //  <></>
-          }
+        
+          {/* } */}
             </>
           }
           </>

@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   // const navMenu= ["Home", "About", "Services", "Contact"]
   const navMenu=[{"name":"প্রচ্ছদ", "link":"/"}, {"name":"জামিয়া পরিচিতি", "link":"/about"}, {"name":"ফি প্রদান", "link":"/payment"}, {"name":"যোগাযোগ", "link":"/contact"},
-  {"name":"লগ ইন", "link":"/login"}
+  // {"name":"লগ ইন", "link":"/login"}
 ]
   return (
     <html lang="en">
